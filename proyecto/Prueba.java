@@ -4,6 +4,8 @@ public class Prueba {
 
 
        static Lista ls=new Lista();
+       static Lista sim=new Lista();
+       static Lista prem=new Lista();
 
     public static void main(String[] args) {
         GuardarLS();
@@ -20,7 +22,7 @@ public class Prueba {
         {
             texto = Teclado.LeeCadena("Comience a escribir: ");
             texto=texto=texto.toUpperCase();
-            texto= texto=texto.replace(" ","");
+            //texto= texto=texto.replace(" ","");
             valida=ValidaTexto(texto);
         }while(valida);
 
@@ -36,7 +38,7 @@ public class Prueba {
  public static boolean ValidaTexto(String texto)
      {
         for(int i=0;i<texto.length();i++)
-        if(!((texto.charAt(i) >='A' && texto.charAt(i) <= 'Z') || (texto.charAt(i)=='.' || texto.charAt(i)== ',')))
+        if(!((texto.charAt(i) >='A' && texto.charAt(i) <= 'Z') || (texto.charAt(i)=='.' || texto.charAt(i)== ','|| texto.charAt(i)==' ')))
          {
             System.out.println("EL TEXTO NO ES VALIDO  =/ ");
             return true;
@@ -46,9 +48,19 @@ public class Prueba {
  public static void TrabajaPremisa(Lista ls)
   {
     ls.Codificar();
+    Nodo q;
+            String aux;
+            for (q= ls.GetNodoH(); q!= null; q=q.GetLigaDer())
+            {
+                aux=q.GetInfo();
+                q.SetInfo(PremisasM1(aux));
+            }
 
   }
 
+  public void PremisasM1(String p)
+  {
 
+  }
     
 }

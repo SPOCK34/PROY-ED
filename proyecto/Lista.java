@@ -12,7 +12,10 @@ public class Lista{
 		T=q;
 	}
 
-
+	public Nodo GetNodoH()
+	{
+		return H;
+	}
 	public void Listar(){
             Nodo q;
             for (q= H; q!= null; q=q.GetLigaDer())
@@ -27,27 +30,26 @@ public class Lista{
             	q.SetInfo(Remplazapremisa(aux));
             }
 	}
-	public void SeparaComas(String p)
+	public void TrabajaPremisas()
 	{
 
 	}
 	public void SeparaEins(String p)
 	{
-		p=p.replace("->","1");
-		p=p.replace("<->","1");
-		String []cadena = p.split(aux);
+		
+		String []cadena = p.split("1");
 	}
 	public String Remplazapremisa(String cadena)
 	{	
 
-		cadena= cadena.replace(" si y solo si "," <-> ");
-		cadena= cadena.replace(" pero "," ^ ");
-		cadena= cadena.replace(" sin embargo "," ^ ");
-		cadena= cadena.replace(" entonces "," -> ");
-		cadena= cadena.replace(" o "," v ");
-		cadena= cadena.replace(" y "," ^ ");
-		cadena= cadena.replace(" no "," ¬ ");
-		cadena= cadena.replace(" por lo tanto, "," C: ");
+		cadena= cadena.replace(" SI Y SOLO SI ","1");
+		cadena= cadena.replace(" PERO ","^");
+		cadena= cadena.replace(" SIN EMBARGO ","^");
+		cadena= cadena.replace(" ENTONCES ","2");
+		cadena= cadena.replace(" O "," v ");
+		cadena= cadena.replace(" Y "," ^ ");
+		cadena= cadena.replace(" NO "," ¬ ");
+		cadena= cadena.replace(" POR LO TANTO, "," C: ");
       
 		return cadena;
 
