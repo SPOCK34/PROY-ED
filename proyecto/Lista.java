@@ -40,7 +40,8 @@ public class Lista{
 		cadena= cadena.replace(" ENTONCES ","2");
 		cadena= cadena.replace(" O "," v ");
 		cadena= cadena.replace(" Y "," ^ ");
-		cadena= cadena.replace(" NO ","0");
+		cadena= cadena.replace(" NO ES VERDAD QUE","0");
+		//cadena= cadena.replace(" NO ","0");
 		cadena= cadena.replace(" POR LO TANTO, ","3");
       
 		return cadena;

@@ -77,9 +77,10 @@ public class Prueba {
     }
 
     aux=aux.replace(" ","");
-    aux2=aux.replace("0","");
-    p=p.replace("0"," ");
-    String [] arr = aux2.split("77");
+    aux=aux.replace("0","");
+    //p=p.replace("0"," ");
+    p=p.replace(" ","");
+    String [] arr = aux.split("77");
     String ll="";
     String [] literales= {"p","q","r","s","t","v","w","z"};
 
@@ -87,10 +88,11 @@ public class Prueba {
         ll=arr[i];
         p=p.replace(ll,literales[i]);
     }
+    return p;
+  }
+  public String TrabajaNo(String p)
+  {
 
-    
-     System.out.println(aux);
-   
     return p;
   }
     
