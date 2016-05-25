@@ -4,11 +4,10 @@ public class Prueba {
 
 
        static Lista ls=new Lista();
-       static Lista sim=new Lista();
-       static Lista prem=new Lista();
 
     public static void main(String[] args) {
         GuardarLS();
+        TrabajaPremisa(ls);
         ls.Listar();
         
     }
@@ -58,9 +57,45 @@ public class Prueba {
 
   }
 
-  public void PremisasM1(String p)
+  public static String PremisasM1(String p)
   {
+    char [] sim= new char[p.length()];
+    String aux="",aux2="";
+    for(int i=0;i<p.length();i++)
+    {
+        char j=p.charAt(i);
+        if(j== '1'|| j=='2'|| j=='3'||j=='^'|| j=='v'||j==',')
+        {
+            
+            sim[i]=j;
+            aux= aux+"77";
+        }
+        else
+        {
+            if(j=='0')
+            {
+                sim[i]=j;
+                aux=aux+"-";
+            }
+            else
+            aux=aux+(p.charAt(i));
+        }
+    }
 
+    aux=aux.replace(" ","");
+    aux2=aux.replace("-","");
+    String [] arr = aux2.split("77");
+    String ll="";
+
+    for (int i=0;i<arr.length ;i++ ) {
+        ll=arr[i];
+        aux=aux.replace(ll,"5"+i);
+    }
+
+    
+     System.out.println(aux);
+   
+    return p;
   }
     
 }

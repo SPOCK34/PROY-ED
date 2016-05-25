@@ -30,26 +30,18 @@ public class Lista{
             	q.SetInfo(Remplazapremisa(aux));
             }
 	}
-	public void TrabajaPremisas()
-	{
-
-	}
-	public void SeparaEins(String p)
-	{
-		
-		String []cadena = p.split("1");
-	}
+	
 	public String Remplazapremisa(String cadena)
 	{	
 
-		cadena= cadena.replace(" SI Y SOLO SI ","1");
+		cadena= cadena.replace(" SI Y SOLO SI "," 1 ");
 		cadena= cadena.replace(" PERO ","^");
 		cadena= cadena.replace(" SIN EMBARGO ","^");
 		cadena= cadena.replace(" ENTONCES ","2");
 		cadena= cadena.replace(" O "," v ");
 		cadena= cadena.replace(" Y "," ^ ");
-		cadena= cadena.replace(" NO "," ¬ ");
-		cadena= cadena.replace(" POR LO TANTO, "," C: ");
+		cadena= cadena.replace(" NO ","0");
+		cadena= cadena.replace(" POR LO TANTO, ","3");
       
 		return cadena;
 
