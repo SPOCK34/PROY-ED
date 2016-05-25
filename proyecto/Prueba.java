@@ -59,7 +59,7 @@ public class Prueba {
 
   public static String PremisasM1(String p)
   {
-    char [] sim= new char[p.length()];
+    char [] sim= new char[p.length()];//
     String aux="",aux2="";
     for(int i=0;i<p.length();i++)
     {
@@ -72,24 +72,20 @@ public class Prueba {
         }
         else
         {
-            if(j=='0')
-            {
-                sim[i]=j;
-                aux=aux+"-";
-            }
-            else
             aux=aux+(p.charAt(i));
         }
     }
 
     aux=aux.replace(" ","");
-    aux2=aux.replace("-","");
+    aux2=aux.replace("0","");
+    p=p.replace("0"," ");
     String [] arr = aux2.split("77");
     String ll="";
+    String [] literales= {"p","q","r","s","t","v","w","z"};
 
     for (int i=0;i<arr.length ;i++ ) {
         ll=arr[i];
-        aux=aux.replace(ll,"5"+i);
+        p=p.replace(ll,literales[i]);
     }
 
     
